@@ -11,6 +11,14 @@ if (!empty($_GET['keyword'])) {
 }
 
 $users = $userModel->getUsers($params);
+function encrypt($string){
+    $encryption_key = "W3docs";
+    $iv_length = openssl_cipher_iv_length("AES-128-CBC");
+    $options = 0;
+    $encryption_iv = '1234567891011121';
+    $encryption = openssl_encrypt($string, "AES-128-CBC", $encryption_key, $options, $encryption_iv);
+    return base64_encode($encryption);
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -50,13 +58,13 @@ $users = $userModel->getUsers($params);
                                 <?php echo $user['type']?>
                             </td>
                             <td>
-                                <a href="form_user.php?id=<?php echo $user['id'] ?>">
+                                <a href="form_user.php?id=<?php echo encrypt($user["id"]) ?>">
                                     <i class="fa fa-pencil-square-o" aria-hidden="true" title="Update"></i>
                                 </a>
-                                <a href="view_user.php?id=<?php echo $user['id'] ?>">
+                                <a href="view_user.php?id=<?php echo encrypt($user["id"]) ?>">
                                     <i class="fa fa-eye" aria-hidden="true" title="View"></i>
                                 </a>
-                                <a href="delete_user.php?id=<?php echo $user['id'] ?>">
+                                <a href="delete_user.php?id=<?php echo encrypt($user["id"]) ?>">
                                     <i class="fa fa-eraser" aria-hidden="true" title="Delete"></i>
                                 </a>
                             </td>

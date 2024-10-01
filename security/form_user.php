@@ -8,7 +8,7 @@ $user = NULL; //Add new user
 $_id = NULL;
 
 if (!empty($_GET['id'])) {
-    $_id = $_GET['id'];
+    $_id = decrypt($_GET['id']);
     $user = $userModel->findUserById($_id);//Update existing user
 }
 
@@ -21,6 +21,15 @@ if (!empty($_POST['submit'])) {
         $userModel->insertUser($_POST);
     }
     header('location: list_users.php');
+}
+
+function decrypt($encrypted_string){
+    $encryption_key = "W3docs";
+    $iv_length = openssl_cipher_iv_length("AES-128-CBC");
+    $options = 0;
+    $encryption_iv = '1234567891011121';
+    $decryption = openssl_decrypt(base64_decode($encrypted_string), "AES-128-CBC", $encryption_key, $options, $encryption_iv);
+    return $decryption;
 }
 
 ?>
