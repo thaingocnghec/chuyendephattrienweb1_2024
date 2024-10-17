@@ -1,0 +1,102 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  margin: 0;
+  padding: 20px;
+}
+.header {
+  background-color: #fff;
+  padding: 15px 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.header .icon-text-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header .icon-text-right div {
+  margin: 0 20px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+.header .icon-text-right div i {
+  margin-right: 10px;
+  font-size: 20px;
+  color: #ff5c5c;
+}
+.services {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+}
+.services .services-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.services .services-header h2 {
+  margin: 0;
+  font-size: 24px;
+}
+.services .services-header .navigation .swiper-button-next,
+.services .services-header .navigation .swiper-button-prev {
+  color: #333;
+  font-size: 20px;
+  transition: color 0.3s;
+}
+.services .services-header .navigation .swiper-button-next:hover,
+.services .services-header .navigation .swiper-button-prev:hover {
+  color: #ff5c5c;
+}
+.services .swiper-container {
+  padding-bottom: 50px;
+}
+.services .swiper-container .swiper-wrapper {
+  display: flex;
+}
+.services .swiper-container .swiper-wrapper .swiper-slide {
+  display: flex;
+  justify-content: center;
+  width: 33.33%;
+}
+.services .swiper-container .service-card {
+  background-color: #fff;
+  margin: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+.services .swiper-container .service-card:hover {
+  transform: scale(1.05);
+}
+.services .swiper-container .service-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+.services .swiper-container .service-card h3 {
+  margin: 10px 0;
+  font-size: 18px;
+}
+.services .swiper-container .service-card p {
+  font-size: 14px;
+  color: #666;
+  max-height: 60px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.services .swiper-container .service-card a {
+  display: block;
+  margin-top: 10px;
+  color: #ff5c5c;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+.services .swiper-container .service-card a:hover {
+  color: #ff2929;
+}
