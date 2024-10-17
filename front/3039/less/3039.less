@@ -1,0 +1,63 @@
+@textSize: 15px;
+@sameBorder: 1px solid red;
+@center: center;
+@margin-header: 100px;
+@black: black;
+@white: white;
+@red: red;
+@margin-items: 20px;
+@padding-btn: 8px 16px;
+@img-width: 262.5px;
+@img-height: 174.75px;
+@img-scale: 0.75;
+@item-height: 424px;
+@img-transform: scale(@img-scale);
+@img-hover-transform: scale(@img-scale + 0.1);
+@img-hover-transition: transform 0.5s ease-in-out;
+
+.header {
+  text-align: @center;
+  margin: @margin-header;
+}
+
+.body-content {
+  text-align: @center;
+  font-size: @textSize;
+}
+
+.service-items {
+  height: @item-height;
+  margin: @margin-items;
+}
+
+.service-item-image {
+  display: block;
+  overflow: hidden;
+  display: flex;
+  justify-content: @center;
+  align-items: @center;
+  width: @img-width;
+  height: @img-height;
+  border-radius: 10px;
+}
+
+.img-hover-effect {
+  transform: @img-transform;
+}
+
+.img-hover-effect:hover {
+  transform: @img-hover-transform;
+  transition: @img-hover-transition;
+}
+
+.btn {
+  border: @sameBorder;
+  color: @black;
+  padding: @padding-btn;
+  border-radius: 0;
+}
+
+.btn:hover {
+  background-color: @red;
+  color: @white;
+}
